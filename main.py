@@ -64,6 +64,9 @@ for i in range(1, minutes+1):
 
 arrow.hideturtle()
 
+# turning off animation
+screen.tracer(0)
+
 # creating digital clock title
 
 digital_title = turtle.Turtle()
@@ -107,6 +110,8 @@ digital_hour = turtle.Turtle()
 for number in (digital_second, digital_minute, digital_hour):
     number.hideturtle()
 
+screen.update()
+
 
 # creating digital clock numbers
 def drawing_digital_numbers():
@@ -128,10 +133,6 @@ def drawing_digital_numbers():
     digital_hour.write(f"{now.hour:02d}:", font=("Helvetica", 36, "bold"))
 
     screen.update()
-
-
-# turning off animation
-screen.tracer(0)
 
 #creating analog clock lines
 
@@ -160,7 +161,7 @@ minute.color("yellow")
 minute_degree = 90 - now.minute * 6
 
 minute.setheading(minute_degree)
-minute.forward(250)
+minute.forward(230)
 
 #drawing hour line
 
@@ -195,7 +196,7 @@ def draw_lines():
     minute.home()
     minute.pendown()
     minute.setheading(90 - minutes * 6)
-    minute.forward(250)
+    minute.forward(230)
 
     hour.clear()
     hour.penup()        
